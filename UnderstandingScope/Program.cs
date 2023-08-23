@@ -48,6 +48,7 @@ namespace UnderstandingScope
         }
         // classes should be encapsulated private fields and private methods
         // private method  means it can be called within a class
+        // understanding Scope 
         class Car
         {
             public void DoSomething()
