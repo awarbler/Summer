@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication2
+namespace TrackerLibrary
 {
-    internal class Program
+    public class SqlConnector : IDataConnection
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }
