@@ -1,28 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrackerLibrary.DataAccess;
 
 namespace TrackerLibrary
 {
     public static class GlobalConfig
     {
         // always visiable for everyone to see or read but only some can set 
-        public static List<IDataConnection> Connections { get; private set; }
+        public static IDataConnection Connection { get; private set; } 
+    
 
-        public static void InitializeConnections(bool database, bool textFiles)
+        public static void InitializeConnections(DatabaseType db)
         {
+            /*switch (db)
+            {
+                case DatabaseType.Sql:
+                    break;
+                case DatabaseType.TextFile:
+                    break;
+                default:
+                    break;
+            }*/
             // call at the begininng of and base in database and textfile
             // dont over engineer your prgrams think about tomorrow 
-            if (database) //if you have a bool you dont have to put true (database == true)
+            if (db == DatabaseType.Sql) //if you have a bool you dont have to put true (database == true)
             {
-                // TODO -   Create the sql connection do something
+                // TODO -   set up the sql connector properly
+                SqlConnector sql = new SqlConnector();
+                Connection =sql;
             }
-            if (textFiles)
+            // two if statements because i need both of these to be true
+            else if (db == DatabaseType.TextFile)
             {
                 // TODO - Create the Text connection
+                TextConnection text = new TextConnection();
+                Connection= text;
             }
+        }
+
+        public static string CnnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }

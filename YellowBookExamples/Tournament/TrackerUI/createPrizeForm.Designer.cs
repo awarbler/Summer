@@ -1,6 +1,6 @@
 ﻿namespace TrackerUI
 {
-    partial class createPrizeForm
+    partial class CreatePrizeForm : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             placeNameLabel = new Label();
             placeNameValue = new TextBox();
             prizeAmountLabel = new Label();
-            prizeAmiuntValue = new TextBox();
+            prizeAmountValue = new TextBox();
             prizePercentageLabel = new Label();
             prizePercentageValue = new TextBox();
             orLabel = new Label();
@@ -50,7 +50,6 @@
             headerLabel.Size = new Size(209, 50);
             headerLabel.TabIndex = 1;
             headerLabel.Text = "Create Prize";
-            headerLabel.Click += headerLabel_Click;
             // 
             // placeNumberLabel
             // 
@@ -58,9 +57,9 @@
             placeNumberLabel.Font = new Font("Segoe UI Light", 20F, FontStyle.Regular, GraphicsUnit.Point);
             placeNumberLabel.Location = new Point(22, 101);
             placeNumberLabel.Name = "placeNumberLabel";
-            placeNumberLabel.Size = new Size(174, 37);
+            placeNumberLabel.Size = new Size(177, 37);
             placeNumberLabel.TabIndex = 22;
-            placeNumberLabel.Text = "Prize Number";
+            placeNumberLabel.Text = "Place Number";
             // 
             // placeNumberValue
             // 
@@ -98,13 +97,14 @@
             prizeAmountLabel.TabIndex = 26;
             prizeAmountLabel.Text = "Prize Amount";
             // 
-            // prizeAmiuntValue
+            // prizeAmountValue
             // 
-            prizeAmiuntValue.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            prizeAmiuntValue.Location = new Point(232, 199);
-            prizeAmiuntValue.Name = "prizeAmiuntValue";
-            prizeAmiuntValue.Size = new Size(291, 43);
-            prizeAmiuntValue.TabIndex = 27;
+            prizeAmountValue.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            prizeAmountValue.Location = new Point(232, 199);
+            prizeAmountValue.Name = "prizeAmountValue";
+            prizeAmountValue.Size = new Size(291, 43);
+            prizeAmountValue.TabIndex = 27;
+            prizeAmountValue.Text = "0";
             // 
             // prizePercentageLabel
             // 
@@ -115,7 +115,6 @@
             prizePercentageLabel.Size = new Size(206, 37);
             prizePercentageLabel.TabIndex = 28;
             prizePercentageLabel.Text = "Prize Percentage";
-            prizePercentageLabel.Click += label3_Click;
             // 
             // prizePercentageValue
             // 
@@ -124,7 +123,7 @@
             prizePercentageValue.Name = "prizePercentageValue";
             prizePercentageValue.Size = new Size(291, 43);
             prizePercentageValue.TabIndex = 29;
-            prizePercentageValue.TextChanged += textBox3_TextChanged;
+            prizePercentageValue.Text = "0";
             // 
             // orLabel
             // 
@@ -149,8 +148,9 @@
             createPrizeButton.TabIndex = 32;
             createPrizeButton.Text = "Create Prize";
             createPrizeButton.UseVisualStyleBackColor = true;
+            createPrizeButton.Click += CreatePrizeButton_Click;
             // 
-            // createPrizeForm
+            // CreatePrizeForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -161,7 +161,7 @@
             Controls.Add(prizePercentageLabel);
             Controls.Add(prizePercentageValue);
             Controls.Add(prizeAmountLabel);
-            Controls.Add(prizeAmiuntValue);
+            Controls.Add(prizeAmountValue);
             Controls.Add(placeNameLabel);
             Controls.Add(placeNameValue);
             Controls.Add(placeNumberLabel);
@@ -170,7 +170,7 @@
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.FromArgb(51, 153, 255);
             Margin = new Padding(5, 6, 5, 6);
-            Name = "createPrizeForm";
+            Name = "CreatePrizeForm";
             Text = "Create Prize Form";
             ResumeLayout(false);
             PerformLayout();
@@ -184,7 +184,7 @@
         private Label placeNameLabel;
         private TextBox placeNameValue;
         private Label prizeAmountLabel;
-        private TextBox prizeAmiuntValue;
+        private TextBox prizeAmountValue;
         private Label prizePercentageLabel;
         private TextBox prizePercentageValue;
         private Label orLabel;

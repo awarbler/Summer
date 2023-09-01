@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.Models
 {
     public class MatchupEntryModel
     {
@@ -20,9 +20,9 @@ namespace TrackerLibrary
         /// represents the matchup that htis team came 
         /// from as teh winner 
         /// </summary>
-        public MatchUpModel ParentMatchup { get; set; } 
+        public MatchUpModel ParentMatchup { get; set; }
 
-       
+
     }
 
 }
